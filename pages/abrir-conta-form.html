@@ -89,6 +89,7 @@
               class="campo__escrita"
               type="text"
               minlength="3"
+              required
             />
             <span class="mensagem-erro"></span>
           </fieldset>
@@ -101,6 +102,7 @@
               class="campo__escrita"
               type="email"
               minlength="4"
+              required
             />
             <span class="mensagem-erro"></span>
           </fieldset>
@@ -111,6 +113,7 @@
               id="rg"
               class="campo__escrita campo__escrita--menor"
               type="text"
+              required
             />
             <span class="mensagem-erro"></span>
           </fieldset>
@@ -126,6 +129,7 @@
               type="text"
               minlength="11"
               maxlength="14"
+              pattern="\d{3}\.?\d{3}\.?\d{3}-\d{2}?"
             />
             <span class="mensagem-erro"></span>
           </fieldset>
@@ -138,11 +142,17 @@
               id="aniversario"
               class="campo__escrita campo__escrita--menor"
               type="date"
+              required
             />
             <span class="mensagem-erro"></span>
           </fieldset>
           <fieldset class="formulario__termos">
-            <input name="termos" class="termos__input" type="checkbox" />
+            <input
+              name="termos"
+              class="termos__input"
+              type="checkbox"
+              required
+            />
             <p class="termos__texto">
               Li e estou ciente quanto às condições de tratamento dos meus dados
               conforme descrito na Política de Privacidade do banco.
@@ -219,5 +229,6 @@
         </h2>
       </section>
     </footer>
+    <script src="../js/script.js" type="module"></script>
   </body>
 </html>
