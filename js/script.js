@@ -66,13 +66,20 @@ const mensagens = {
 
 function verificaCampo(campo) {
   let mensagem = "";
-  campo.setCustomValidity('')
-  if (campo.name == "cpf" && campo.value.length >= 11) {
-      ehUmCPF(campo);
+  campo.setCustomValidity('');
+
+  if (campo.name === "cpf" && campo.value.length >= 11) {
+    const cpfValido = ehUmCPF(campo);
+    if (cpfValido) {
+      mensagem = mensagens[campo.name].customError;
+      campo.setCustomValidity(mensagem);
+    }
   }
+
   if (campo.name == "aniversario" && campo.value != "") {
       ehMaiorDeIdade(campo);
   }
+
   tiposDeErro.forEach(erro => {
       if (campo.validity[erro]) {
           mensagem = mensagens[campo.name][erro];
